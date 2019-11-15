@@ -1,0 +1,26 @@
+SELECT COUNT(*)
+	FROM pgdorybackend.do_document where code_statut_document = 'INTEGRE_SIP';
+	
+SELECT *
+	FROM pgdorybackend.do_document where uuid is not null;
+	
+	
+UPDATE pgdorybackend.do_document
+	SET code_statut_document='HORODATE', id_lot_versement=1, id_sip = null
+	WHERE uuid is not null;
+
+UPDATE pgdorybackend.de_document
+	SET code_statut_document='HORODATE', id_lot_versement=1
+	WHERE uuid is not null;
+	
+UPDATE pgdorybackend.do_document
+	SET code_statut_document='HORODATE', id_lot_versement=1
+	WHERE  code_statut_document = 'CREATION_SIP';
+	
+	
+	INSERT INTO pgdorybackend.lo_lot_versement(
+	nom, url_depot, code_statut_lot_versement)
+	VALUES ('test', 'test', 'HORODATE');
+	
+	
+	
